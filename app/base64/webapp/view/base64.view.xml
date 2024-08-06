@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="base64.controller.base64"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:unified="sap.ui.unified"
+>
+    <Page id="page" title="Upload Images">
+        <content>
+            <VBox>
+                <unified:FileUploader
+                    id="fileUploader"
+                    name="uploadFile"
+                    multiple="true"
+                    width="100%"
+                    change="onFileChange"
+                />
+                <Button
+                    text="Upload"
+                    press="onUpload"
+                    type="Emphasized"
+                />
+                <List
+                    items="{/images}"
+                >
+                    <StandardListItem
+                        title="{name}"
+                        description="{data}"
+                    />
+                </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
